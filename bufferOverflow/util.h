@@ -3,7 +3,6 @@
 
 void print_with_null(char* str);
 
-
-void hexdump_arr(char *str);
+void hexdump_arr(char* str);
 
 #endif

